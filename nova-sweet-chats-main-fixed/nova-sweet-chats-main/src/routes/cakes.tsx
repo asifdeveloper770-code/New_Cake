@@ -98,34 +98,34 @@ function CakesPage() {
 
   return (
     <>
-    {/* Hero */}
-<section className="mx-auto max-w-3xl px-5 pb-12 pt-14 text-center sm:px-8 md:pt-20">
-  <p className="eyebrow">The Collection</p>
+      {/* Hero */}
+      <section className="mx-auto max-w-3xl px-5 pb-12 pt-14 text-center sm:px-8 md:pt-20">
+        <p className="eyebrow">The Collection</p>
 
-  <h1 className="mt-5 font-display text-5xl leading-tight sm:text-6xl">
-    Cakes &amp; Flavors
-  </h1>
+        <h1 className="mt-5 font-display text-5xl leading-tight sm:text-6xl">
+          Cakes &amp; Flavors
+        </h1>
 
-  <p className="mt-5 text-base leading-relaxed text-muted-foreground">
-    Each cake below can be resized, restyled and refilled to suit your
-    celebration. Tap any cake to ask about it directly on WhatsApp.
-  </p>
+        <p className="mt-5 text-base leading-relaxed text-muted-foreground">
+          Each cake below can be resized, restyled and refilled to suit your
+          celebration. Tap any cake to ask about it directly on WhatsApp.
+        </p>
 
-  {/* Order Notice */}
-  <div className="mx-auto mt-7 max-w-xl rounded-xl border border-border bg-secondary/40 px-5 py-4">
-    <p className="font-display text-base font-medium text-foreground">
-      Please note
-    </p>
+        {/* Order Notice */}
+        <div className="mx-auto mt-7 max-w-xl rounded-xl border border-border bg-secondary/40 px-5 py-4">
+          <p className="font-display text-base font-medium text-foreground">
+            Please note
+          </p>
 
-    <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
-      Orders should be placed at least{" "}
-      <span className="font-medium text-foreground">
-        3 days in advance
-      </span>
-      . Rush orders may be accommodated depending on availability.
-    </p>
-  </div>
-</section>
+          <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
+            Orders should be placed at least{" "}
+            <span className="font-medium text-foreground">
+              3 days in advance
+            </span>
+            . Rush orders may be accommodated depending on availability.
+          </p>
+        </div>
+      </section>
 
       {/* Cake Gallery */}
       <section
@@ -171,14 +171,9 @@ function CakesPage() {
             </div>
           </div>
         ) : (
-          <div className="columns-1 gap-12 sm:columns-2 lg:columns-3">
-            {cakes.map((cake, i) => (
-              <div
-                key={cake.id}
-                className={`mb-12 break-inside-avoid ${
-                  i % 3 === 1 ? "lg:mt-12" : ""
-                }`}
-              >
+          <div className="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3">
+            {cakes.map((cake) => (
+              <div key={cake.id} className="min-w-0">
                 <CakeCard
                   cake={{
                     slug: cake.slug,
